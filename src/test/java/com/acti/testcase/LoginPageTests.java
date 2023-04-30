@@ -34,6 +34,9 @@ public class LoginPageTests extends BaseTest {
 		lp.enterUsername("admin");
 		lp.enterPassword("manager");
 		lp.clickLoginButton();
+		String actual = ep.getUserLoggedIn();
+		Assert.assertTrue(actual.contains("John"));
+		ep.clickLogout();
 	}
 
 	@Test(enabled = true)
